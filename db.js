@@ -10,7 +10,7 @@ const pool = mysql.createPool({
 
 pool.getConnection()
   .then(conn => {
-    console.log("✅ Connected to MySQL database.");
+    console.log("DB is connected to:", process.env.DB_HOST, process.env.DB_PORT);
     conn.release();
   })
   .catch(err => {
